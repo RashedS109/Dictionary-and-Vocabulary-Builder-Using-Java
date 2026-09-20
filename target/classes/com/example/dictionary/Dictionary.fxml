@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionary.DictionaryController">
+    <tabs>
+        <Tab text="Search" closable="false">
+            <VBox spacing="15">
+                <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+                <HBox spacing="10">
+                    <TextField fx:id="searchField" promptText="Enter an English word..." HBox.hgrow="ALWAYS"/>
+                    <Button fx:id="searchButton" text="Search" onAction="#handleSearch"/>
+                </HBox>
+                <TextArea fx:id="resultArea" editable="false" wrapText="true" VBox.vgrow="ALWAYS"/>
+            </VBox>
+        </Tab>
+        <Tab text="Saved Words" closable="false">
+            <VBox>
+                <Label text="Database integration coming soon..."/>
+            </VBox>
+        </Tab>
+    </tabs>
+</TabPane>
