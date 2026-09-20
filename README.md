@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 Dictionary and Vocabulary Builder
 
 A desktop application designed to help users look up English words, learn their definitions and pronunciations, and build a personalized vocabulary list. The application integrates a live REST API for dictionary data and a local SQLite database for saving words, featuring a responsive, multi-tabbed JavaFX interface.
