@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionary.DictionaryController">
+    <tabs>
+        <Tab text="Search" closable="false">
+            <VBox spacing="15">
+                <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+                <HBox spacing="10">
+                    <TextField fx:id="searchField" promptText="Enter an English word..." HBox.hgrow="ALWAYS"/>
+                    <Button fx:id="searchButton" text="Search" onAction="#handleSearch"/>
+                    <Button fx:id="saveButton" text="Save Word" onAction="#handleSaveWord" disable="true"/>
+                </HBox>
+                <TextArea fx:id="resultArea" editable="false" wrapText="true" VBox.vgrow="ALWAYS"/>
+            </VBox>
+        </Tab>
+        <Tab text="Saved Words" closable="false" onSelectionChanged="#loadSavedWords">
+            <HBox spacing="15">
+                <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+                <!-- Left Side: List and Delete Button -->
+                <VBox spacing="10" minWidth="200">
+                    <Button text="Delete Selected Word" onAction="#handleDeleteWord" maxWidth="Infinity"/>
+                    <ListView fx:id="wordListView" VBox.vgrow="ALWAYS"/>
+                </VBox>
+
+                <!-- Right Side: The saved definition -->
+                <TextArea fx:id="savedDefinitionArea" editable="false" wrapText="true" HBox.hgrow="ALWAYS"/>
+            </HBox>
+        </Tab>
+    </tabs>
+</TabPane>
